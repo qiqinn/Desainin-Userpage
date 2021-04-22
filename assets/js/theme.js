@@ -231,7 +231,7 @@ var utils = {
 
 var detectorInit = function detectorInit() {
   var _window = window,
-      is = _window.is;
+    is = _window.is;
   var html = document.querySelector('html');
   is.opera() && addClass(html, 'opera');
   is.mobile() && addClass(html, 'mobile');
@@ -287,7 +287,7 @@ var navbarInit = function navbarInit() {
     var colorRgb = utils.hexToRgb(color);
 
     var _window$getComputedSt = window.getComputedStyle(navbar),
-        backgroundImage = _window$getComputedSt.backgroundImage;
+      backgroundImage = _window$getComputedSt.backgroundImage;
 
     var transition = 'background-color 0.35s ease';
     navbar.style.backgroundImage = 'none'; // Change navbar background color on scroll
@@ -340,3 +340,55 @@ var navbarInit = function navbarInit() {
 docReady(navbarInit);
 docReady(detectorInit);
 //# sourceMappingURL=theme.js.map
+
+/**
+   * Porfolio isotope and filter
+   */
+window.addEventListener('load', () => {
+  let portfolioContainer = select('.portfolio-container');
+  if (portfolioContainer) {
+    let portfolioIsotope = new Isotope(portfolioContainer, {
+      itemSelector: '.portfolio-item',
+      layoutMode: 'fitRows'
+    });
+
+    let portfolioFilters = select('#portfolio-flters li', true);
+
+    on('click', '#portfolio-flters li', function (e) {
+      e.preventDefault();
+      portfolioFilters.forEach(function (el) {
+        el.classList.remove('filter-active');
+      });
+      this.classList.add('filter-active');
+
+      portfolioIsotope.arrange({
+        filter: this.getAttribute('data-filter')
+      });
+      aos_init();
+    }, true);
+  }
+
+});
+
+/**
+ * Initiate portfolio lightbox 
+ */
+const portfolioLightbox = GLightbox({
+  selector: '.portfokio-lightbox'
+});
+
+/**
+ * Portfolio details slider
+ */
+new Swiper('.portfolio-details-slider', {
+  speed: 400,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    clickable: true
+  }
+});
