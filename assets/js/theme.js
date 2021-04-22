@@ -11,6 +11,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /*                                    Utils                                   */
 
 /* -------------------------------------------------------------------------- */
+
 var docReady = function docReady(fn) {
   // see if DOM is already available
   if (document.readyState === 'loading') {
