@@ -49,27 +49,97 @@
           <ul class="navbar-nav mx-auto border-bottom border-lg-bottom-0 pt-2 pt-lg-0">
             <li class="nav-item"><a class="nav-link active active" aria-current="page" href="index.html">Home</a></li>
             <li class="nav-item">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Layanan
-              </a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="layanan-logo.html">Desian Logo</a>
-                <a class="dropdown-item" href="layanan-kemasan.html">Desain Kemasan & Label</a>
-                <a class="dropdown-item" href="layanan-website.html">Desain Website</a>
-              </div>
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Layanan
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="layanan-logo.html">Desian Logo</a>
+                  <a class="dropdown-item" href="layanan-kemasan.html">Desain Kemasan & Label</a>
+                  <a class="dropdown-item" href="layanan-website.html">Desain Website</a>
+                </div>
             </li>
             <li class="nav-item"><a class="nav-link" href="portfolio.html">Portofolio </a></li>
             <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Hubungi Kami </a></li>
           </ul>
           <form class="d-flex py-3 py-lg-0">
-            <button class="btn btn-link text-1000 fw-medium order-1 order-lg-0" type="button">Sign in</button>
-            <button class="btn btn-outline-danger rounded-pill order-0" type="submit">Sign Up</button>
+            <button class="btn btn-link text-1000 fw-medium order-1 order-lg-0" type="button" data-toggle="modal" data-target="#myModal">Sign in</button>
+            <button class="btn btn-outline-danger rounded-pill order-0" data-toggle="modal" data-target="#myModal2" type="button">Sign Up</button>
           </form>
         </div>
       </div>
     </nav>
+
+   
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h4 class="modal-title" id="myModalLabel">Login</h4>
+                          </div>
+                          <div class="modal-body">
+                              <form>
+                                  <div class="form-group">
+                                      <label for="email">Email address</label>
+                                      <div class="input-group pb-modalreglog-input-group">
+                                          <input type="email" class="form-control" id="email" placeholder="Email">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="password">Password</label>
+                                      <div class="input-group pb-modalreglog-input-group">
+                                          <input type="password" class="form-control" id="pws" placeholder="Password">
+                                      </div>
+                                  </div>
+                              </form>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-outline-danger rounded-pill order-0">Log in</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h4 class="modal-title" id="myModalLabel">Daftar Sekarang</h4>
+                          </div>
+                          <div class="modal-body">
+                              <form >
+                                  <div class="form-group">
+                                      <div id="pb-modalreglog-progressbar"></div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="email">Email address</label>
+                                      <div class="input-group pb-modalreglog-input-group">
+                                          <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="password">Password</label>
+                                      <div class="input-group pb-modalreglog-input-group">
+                                          <input type="password" class="form-control" id="inputPws" placeholder="Password">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="confirmpassword">Confirm password</label>
+                                      <div class="input-group pb-modalreglog-input-group">
+                                          <input type="password" class="form-control" id="inputConfirmPws" placeholder="Confirm Password">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <input type="checkbox" id="ch" name="chs">
+                                      I agree with <a href="#">terms and conditions.</a>
+                                  </div>
+                              </form>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-outline-danger rounded-pill order-0">Sign up</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
 
 
 

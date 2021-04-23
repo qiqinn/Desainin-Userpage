@@ -18193,3 +18193,31 @@ label {
   color: var(--bs-white);
   content: "/";
 }
+
+ /* Login Register */
+
+ .pb-modalreglog-container
+ {
+     margin-top: 100px;
+ }
+
+ .pb-modalreglog-legend
+ {
+     text-align: center;
+ }
+
+ .pb-modalreglog-form-reg
+ {
+     text-align: center;
+ }
+
+ .pb-modalreglog-footer p
+ {
+     text-align: center;
+     margin-top: 20px;
+ }
+
+ #pb-modalreglog-progressbar
+ {
+     border-radius: 2px;
+ }
