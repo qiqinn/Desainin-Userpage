@@ -17931,8 +17931,8 @@ label {
 }
 
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
-  color: #4154f1;
-  border-color: #4154f1;
+  color: var(--bs-red);
+  border-color: var(--bs-red);
 }
 
 .portfolio #portfolio-flters li:last-child {
@@ -18010,12 +18010,12 @@ label {
 
 .portfolio .portfolio-wrap .portfolio-info h4 {
   font-size: 20px;
-  color: #012970;
+  color: var(--bs-gray);
   font-weight: 700;
 }
 
 .portfolio .portfolio-wrap .portfolio-info p {
-  color: #012970;
+  color: var(--bs-gray);
   font-weight: 600;
   font-size: 14px;
   text-transform: uppercase;
@@ -18030,7 +18030,7 @@ label {
 
 .portfolio .portfolio-wrap .portfolio-links a {
   color: #fff;
-  background: #4154f1;
+  background: var(--bs-red);
   margin: 10px 2px;
   width: 36px;
   height: 36px;
@@ -18047,7 +18047,7 @@ label {
 }
 
 .portfolio .portfolio-wrap .portfolio-links a:hover {
-  background: #5969f3;
+  background: var(--bs-white);
 }
 
 .portfolio .portfolio-wrap:hover img {
@@ -18098,16 +18098,15 @@ label {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #4154f1;
+  border: 1px solid var(--bs-red);
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #4154f1;
+  background-color: var(--bs-red);
 }
 
 .portfolio-details .portfolio-info {
   padding: 30px;
-  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
 }
 
 .portfolio-details .portfolio-info h3 {
@@ -18148,7 +18147,7 @@ label {
 
 .breadcrumbs {
   padding: 15px 0;
-  background: #012970;
+  background: var(--bs-red);
   min-height: 40px;
   margin-top: 82px;
   color: #fff;
@@ -18163,6 +18162,7 @@ label {
 .breadcrumbs h2 {
   font-size: 28px;
   font-weight: 500;
+  color: var(--bs-white);
 }
 
 .breadcrumbs ol {
@@ -18190,6 +18190,6 @@ label {
 .breadcrumbs ol li+li::before {
   display: inline-block;
   padding-right: 10px;
-  color: #8894f6;
+  color: var(--bs-white);
   content: "/";
 }

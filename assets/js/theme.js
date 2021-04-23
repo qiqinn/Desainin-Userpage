@@ -345,51 +345,43 @@ docReady(detectorInit);
 /**
    * Porfolio isotope and filter
    */
-window.addEventListener('load', () => {
-  let portfolioContainer = select('.portfolio-container');
-  if (portfolioContainer) {
-    let portfolioIsotope = new Isotope(portfolioContainer, {
-      itemSelector: '.portfolio-item',
-      layoutMode: 'fitRows'
-    });
-
-    let portfolioFilters = select('#portfolio-flters li', true);
-
-    on('click', '#portfolio-flters li', function (e) {
-      e.preventDefault();
-      portfolioFilters.forEach(function (el) {
-        el.classList.remove('filter-active');
-      });
-      this.classList.add('filter-active');
-
-      portfolioIsotope.arrange({
-        filter: this.getAttribute('data-filter')
-      });
-      aos_init();
-    }, true);
+// init Isotope
+var $grid = $('.container').isotope({
+  itemSelector: '.element-item',
+  layoutMode: 'fitRows',
+  getSortData: {
+    category: '[data-category]',
+    weight: function (itemElem) {
+      var weight = $(itemElem).find('.weight').text();
+      return parseFloat(weight.replace(/[\(\)]/g, ''));
+    }
   }
-
 });
 
-/**
- * Initiate portfolio lightbox 
- */
-const portfolioLightbox = GLightbox({
-  selector: '.portfokio-lightbox'
-});
-
-/**
- * Portfolio details slider
- */
-new Swiper('.portfolio-details-slider', {
-  speed: 400,
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: false
+// filter functions
+var filterFns = {
+  // show if number is greater than 50
+  numberGreaterThan50: function () {
+    var number = $(this).find('.number').text();
+    return parseInt(number, 10) > 50;
   },
-  pagination: {
-    el: '.swiper-pagination',
-    type: 'bullets',
-    clickable: true
+  // show if name ends with -ium
+  ium: function () {
+    var name = $(this).find('.name').text();
+    return name.match(/ium$/);
   }
+};
+
+// bind filter button click
+$('#filters').on('click', 'button', function () {
+  var filterValue = $(this).attr('data-filter');
+  // use filterFn if matches value
+  filterValue = filterFns[filterValue] || filterValue;
+  $grid.isotope({ filter: filterValue });
+});
+
+// bind sort button click
+$('#sorts').on('click', 'button', function () {
+  var sortByValue = $(this).attr('data-sort-by');
+  $grid.isotope({ sortBy: sortByValue });
 });
